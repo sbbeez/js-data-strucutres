@@ -13,8 +13,13 @@ node2.next_node = node3;
 // sl1.countNodes();
 // sl1.search(7);
 // sl1.insertInBeginning(node4);
-// sl1.insertInEnd(node4);
-// sl1.insertAfterNode(3, node5);
-// sl1.insertBeforeNode(1, node5)
+sl1.insertInEnd(node4);
+sl1.insertInEnd(node5);
+// sl1.insertAfterNode(3, node4);
+// sl1.insertBeforeNode(1, node5);
 // sl1.insertAtPosition(1, node4);
+// sl1.deleteList();
+// sl1.deleteFirstNode();
+// sl1.deleteLastNode();
+sl1.deleteNode(5);
 sl1.displayList();

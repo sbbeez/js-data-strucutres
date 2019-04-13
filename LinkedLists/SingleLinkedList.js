@@ -11,6 +11,7 @@ class SingleLinkedList {
             singleNode = singleNode.next_node;
         }
     }
+
     countNodes() {
         let singleNode = this.start;
         let count = 0;
@@ -75,7 +76,7 @@ class SingleLinkedList {
             return;
         }
         let singleNode = this.start;
-        if (singleNode.info == afterNodeInfo) { 
+        if (singleNode.info == afterNodeInfo) {
             this.insertInBeginning(node);
             return;
         }
@@ -107,6 +108,64 @@ class SingleLinkedList {
             singleNode = singleNode.next_node;
         }
         console.log("list is not having less number of nodes");
+    }
+
+    deleteList() {
+        if (!this.start) {
+            console.log("list is empty");
+            return;
+        }
+        this.start = undefined;
+    }
+
+    deleteFirstNode() {
+        if (!this.start) {
+            console.log("list is empty");
+            return;
+        }
+        if (!this.start.next_node) {
+            this.deleteList();
+            return;
+        }
+        this.start = this.start.next_node;
+    }
+
+    deleteLastNode() {
+        if (!this.start) {
+            console.log("list is empty");
+            return;
+        }
+        if (!this.start.next_node) {
+            this.deleteList();
+            return;
+        }
+        let singleNode = this.start;
+        while (singleNode) {
+            if (!singleNode.next_node.next_node) singleNode.next_node = undefined;
+            singleNode = singleNode.next_node;
+        }
+    }
+
+    deleteNode(value) {
+        if (!this.start) {
+            console.log("list is empty");
+            return;
+        }
+        if (this.start.info == value) {
+            this.deleteFirstNode();
+            return;
+        }
+        let singleNode = this.start;
+        while (singleNode.next_node) {
+            if (singleNode.next_node.info == value) {
+                if (!singleNode.next_node.next_node) {
+                    this.deleteLastNode();
+                    return;
+                }
+                singleNode.next_node = singleNode.next_node.next_node
+            }
+            singleNode = singleNode.next_node;
+        }
     }
 }
 
