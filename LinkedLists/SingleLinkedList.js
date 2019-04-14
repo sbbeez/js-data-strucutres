@@ -1,3 +1,5 @@
+const { Node } = require("./Node");
+
 class SingleLinkedList {
     constructor() {
         this.start = undefined;
@@ -278,6 +280,13 @@ class SingleLinkedList {
                 next_node = singleNode.next_node;
             }
             end = singleNode;
+        }
+    }
+
+    createRandomLinkedList(size) {
+        for (let i = 0; i < size; i++) {
+            let node = new Node(Math.floor(Math.random() * 100));
+            this.insertInEnd(node);
         }
     }
 }
